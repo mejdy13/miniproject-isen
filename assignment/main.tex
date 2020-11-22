@@ -37,7 +37,7 @@
 \usepackage{listings} % Required for insertion of code
 
 \usepackage{enumerate} % To modify the enumerate environment
-
+\usepackage{hyperref}
 %----------------------------------------------------------------------------------------
 %	ASSIGNMENT INFORMATION
 %----------------------------------------------------------------------------------------
@@ -46,14 +46,13 @@
 
 \author{} % Student name
 
-\date{08/11/2019} % Due date
-
 \institute{ISEN Marseille} % Institute or school name
 
 \class{C++ et programmation orientée objet} % Course or class name
 
 \professor{Thibaut Tortosa} % Professor or teacher in charge of the assignment
 
+\date{10/12/2020} % Due date
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -66,9 +65,9 @@
 
 \section*{Introduction}
 
-Ce mini projet vise à développer un logiciel de dessin simple.\\
+Ce mini projet vise à développer un logiciel de dessin simple. 
 
-Le dessin permettra de représenter plusieurs formes dans une images. Le choix et les coordonnées des formes pourront être choisis à l'aide d'un interface en ligne de commande, ou encore à l'aide d'un fichier de configuration.\\
+Le dessin permettra de représenter plusieurs formes dans une images. Le choix et les coordonnées des formes pourront être choisis à l'aide d'un interface en ligne de commande, ou encore à l'aide d'un fichier de configuration.
 
 L'enregistrement des images se fera à l'aide de la librairie stb image.
 
@@ -101,22 +100,21 @@ Dans un premier temps, vérifier l'installation des paquets suivant dans votre e
 sudo apt-get install build-essential git
 \end{verbatim}
 
-Une fois les paquets installé, choisir un répertoire de travail et exécuter la commande suivante :
-\begin{verbatim}
-git clone https://...
-\end{verbatim}
+Se rendre sur \href{https://github.com/t-tortosa/miniproject-isen}{https://github.com/t-tortosa/miniproject-isen}. Cliquer sur 'Code', puis 'Download Zip'.
+
+Dézipper le projet dans votre répertoire de travail.
 
 Entrez dans le répertoire qui vient d'être créé puis utilisez la commande \verb"make" afin de compiler le projet.
 Vérifier la compilation du projet puis exécutez le programme résultant \begin{verbatim}./FigureCreator\end{verbatim}. Le programme devrait avoir produit une image.
 
-Une fois le programme compilé, vous devrez alors créer une nouvelle branche de travail à l'aide de la commande suivante :
+Créez un nouveau repository sur github, afin d'accueillir le projet. Télécharger le repository à l'aide de la commande 
 \begin{verbatim}
-git ...
+	git clone <repo_name>
 \end{verbatim}
 
 Créez un fichier README.txt puis écrivez-y vos noms et prénoms. Ajoutez ensuite ce fichier au projet à l'aide de la commande :
 \begin{verbatim}
-git add README.txt
+	git add README.txt
 \end{verbatim}
 
 Réalisez ensuite un commit avec cette modification :
@@ -124,7 +122,7 @@ Réalisez ensuite un commit avec cette modification :
 	git commit -m 'Ajout du readme.txt'
 \end{verbatim}
 
-Poussez ensuite votre modification sur votre branche fraichement créée:
+Poussez ensuite votre modification :
 \begin{verbatim}
 	git push
 \end{verbatim}
@@ -149,14 +147,14 @@ Actuellement, le projet est constitué des éléments suivants :
 	\item Un \textbf{main}
 \end{enumerate}
 
-La classe \textbf{Drawing} a les attributs suivants : \\
+La classe \textbf{Drawing} a les attributs suivants :
 \begin{itemize}
 	\item width : largeur de l'image. Cet attribut est constant et défini à la construction de l'objet
 	\item height : hauteur de l'image. Cet attribut est constant et défini à la construction de l'objet
 	\item image : contenu de l'image, stocké dans un vecteur de char
 \end{itemize}
 
-Elle a les méthodes suivantes : \\
+Elle a les méthodes suivantes :
 \begin{itemize}
 	\item Drawing : Constructeur de l'objet. Permet d'initialiser width et height, puis d'allouer la mémoire nécessaire au stockage de l'image.
 	\item ~Drawing : Destructeur de l'objet
